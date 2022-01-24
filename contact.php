@@ -1,8 +1,8 @@
 <?php
-//include "include/config.php";
+include "include/config.php";
 ob_start();
 session_start();
-//include "../bhoomantra/include/include.php";
+include "/include/include.php";
 ?>
 <!doctype html>
 <html class="no-js" >
@@ -35,7 +35,7 @@ include "header.php";
 						<div class="text-center text-white ">
 							<h1 class="">Contact Us</h1>
 							<ol class="breadcrumb text-center">
-								<li class="breadcrumb-item"><a href="#">Home</a></li>
+								<li class="breadcrumb-item"><a href="index.php">Home</a></li>
 								<li class="breadcrumb-item active text-white" aria-current="page">Contact</li>
 							</ol>
 						</div>
@@ -63,7 +63,7 @@ include "header.php";
 								<div class="card">
 									<div class="support-service bg-secondary">
 										<i class="fa fa-clock-o"></i>
-										<h6>Tue-Sun(10:00-6:00)</h6>
+										<h6>Tue-Sun(10:00am - 6:00pm)</h6>
 										<p>Working Hours!</p>
 									</div>
 								</div>
@@ -85,7 +85,7 @@ include "header.php";
 								<div class="card mb-0">
 									<div class="support-service bg-info">
 										<i class="fa fa-envelope-o"></i>
-										<h6><a href="mailto:"presales.executive@bhoomantra.com"  style="color:#fff;"> presales.executive@bhoomantra.com</a></h6>
+										<h6><a href="mailto:"support@bhoomantra.com"  style="color:#fff;"> support@bhoomantra.com</a></h6>
 										<p>Support us!</p><br> 
 									</div>
 								</div>

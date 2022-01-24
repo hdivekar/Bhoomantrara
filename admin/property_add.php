@@ -85,13 +85,38 @@ session_start();
 										<div class="row">
 											<div class="col-md-6">
 											<div class="form-group ">
-											<label class="form-label">Enter Property</label>
+											<label class="form-label">Enter Project</label><!--Property Name-->
 											<input type="text" class="form-control w-100" name="property_name" placeholder="" required>
 										</div>
 											</div>
 											<div class="col-md-6">
 											<div class="form-group ">
-											<label class="form-label">Select Category</label>
+											<label class="form-label">Project Segment</label>
+											<input type="text" class="form-control w-100" name="project_segment" placeholder="" required>
+										</div>
+											</div>
+											<div class="col-md-6">
+											<div class="form-group ">
+											<label class="form-label">Select Main Configuration</label><!--Category Name-->
+											<select class="form-control " name="main_category">
+											    <?php
+											    $query="SELECT * FROM main_category";
+											    $result=$con->query($query);
+											    if($result->num_rows>0){
+											        while($row=$result->fetch_assoc()){
+											            $category_id=$row['id'];
+											            $category_name=$row['name'];
+											            
+											            echo'<option value='.$category_id.'>'.$category_name.'</option>';
+											        }
+											    }
+											    ?>
+											</select>
+										</div>
+											</div>
+											<div class="col-md-6">
+											<div class="form-group ">
+											<label class="form-label">Select Configuration</label><!--Category Name-->
 											<select class="form-control " name="property_category">
 											    <?php
 											    $query="SELECT * FROM property_category";
@@ -108,6 +133,12 @@ session_start();
 											</select>
 										</div>
 											</div>
+												<div class="col-md-6">
+											<div class="form-group ">
+											<label class="form-label">Configuration Type</label><!--Area-->
+											<input type="text" class="form-control w-100" name="configuration_type" placeholder="Spacious" required>
+										</div>
+										</div>
 											<div class="col-md-6">
 											<div class="form-group ">
 											<label class="form-label">Select State</label>
@@ -130,7 +161,7 @@ session_start();
 											</div>
 											<div class="col-md-6">
 											<div class="form-group ">
-											<label class="form-label">Select Location</label>
+											<label class="form-label">Select City</label><!--Location-->
 											<select class="form-control " name="property_location">
 											    <?php
 											    $query="SELECT * FROM property_location";
@@ -147,18 +178,32 @@ session_start();
 											</select>
 										</div>
 											</div>
-										<div class="col-md-6">
+												<div class="col-md-6">
 											<div class="form-group ">
-											<label class="form-label">Enter Area</label>
+											<label class="form-label">No. of Bedrooms</label><!--Area-->
+											<input type="number" class="form-control w-100" name="bed_rooms" placeholder="" required>
+										</div>
+											</div>
+										<div class="col-md-12">
+											<div class="form-group ">
+											<label class="form-label">Enter Location</label><!--Area-->
 											<input type="text" class="form-control w-100" name="property_area" placeholder="" required>
 										</div>
 											</div>	
-										<div class="col-md-6">
+											<div class="col-md-6">
 											<div class="form-group ">
-											<label class="form-label">Enter Price</label>
-											<input type="number" class="form-control w-100" name="property_price" placeholder="" required>
+											<label class="form-label">Carpet Area(Sq.ft)</label>
+											<input type="number" class="form-control w-100"  name="carpet_area" placeholder="" required>
 										</div>
 											</div>
+											<div class="col-md-6">
+											<div class="form-group ">
+											<label class="form-label">Enter Price</label>
+											<input type="text" class="form-control w-100" onkeyup="indian_currency()" id="property_price" name="property_price" placeholder="" required>
+										</div>
+											</div>
+										
+										
 										<div class="col-md-12">
 											<div class="form-group">
 												<label class="form-label">Address</label>
@@ -173,13 +218,13 @@ session_start();
 											</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<label class="form-label">Short Description</label>
+												<label class="form-label">About Project</label>
 												<textarea class="form-control"row="2" name="property_short_description"></textarea>
 											</div>
 											</div>
 											<div class="col-md-6">
 											<div class="form-group">
-												<label class="form-label">Key Distance<sup>(Separate by comma)</sup></label>
+												<label class="form-label">Proximap Distance<sup>(Separate by comma)</sup></label>
 												
 												<textarea  class="form-control" row="2" name="property_key_distance"></textarea>
 											</div>
@@ -321,15 +366,38 @@ session_start();
 
 		<!-- file uploads js -->
         <script src="../assets/plugins/fileuploads/js/dropify.js"></script>
+<script>
+function indian_currency(){
+    
+    var xvalue=document.getElementById("property_price").value;
+    if(xvalue!=""){
+    var x = parseFloat(xvalue.replace(/,/g, ''))
+    x=x.toString();
+    var lastThree = x.substring(x.length-3);
+    var otherNumbers = x.substring(0,x.length-3);
+    if(otherNumbers != '')
+        lastThree = ',' + lastThree;
+    var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+    
+    document.getElementById("property_price").value=res;
+    }
+}
 
+</script>
 		<?php
 		if(isset($_POST['submit_add_property'])){
 			$property_name=$_POST['property_name'];
+			$project_segment=$_POST['project_segment'];
+			$main_category=$_POST['main_category'];
+			$configuration_type=$_POST['configuration_type'];
 			$property_category=$_POST['property_category'];
 			$property_state=$_POST['property_state'];
 			$property_location=$_POST['property_location'];
 			$property_area=$_POST['property_area'];
+			$bed_rooms=$_POST['bed_rooms'];
+			$carpet_area=$_POST['carpet_area'];
 			$property_price=$_POST['property_price'];
+			$property_price=str_replace(",","",$property_price);
 			$property_address=$_POST['property_address'];
 			$property_description=$_POST['property_description'];
 			$property_latitude=$_POST['property_latitude'];
@@ -363,10 +431,12 @@ session_start();
 			}
 			
 			$total = count($_FILES['property_image']['name']);
-			$query="INSERT INTO `property_details`(`name`, `state`, `area`, `location`, `category`, `price`, `description`, `latitude`, `longitude`, `facilities`, `address`, `builder_id`,`short_description`) VALUES 
-			                                    ('$property_name','$property_state','$property_area','$property_location','$property_category','$property_price','$property_description','$property_latitude','$property_longitude','$facility','$property_address','$builder','$property_short_description');
-			
+			$query="
+INSERT INTO `property_details`(`name`, `state`, `area`, `location`, `project_segment`, `main_category`, `category`, `category_type`, `builder_carpet_area`, `bed_rooms`, `price`, `description`, `short_description`, `latitude`, `longitude`, `facilities`, `address`, `builder_id`) 
+                VALUES ('$property_name','$property_state','$property_area','$property_location','$project_segment','$main_category','$property_category','$configuration_type','$carpet_area','$bed_rooms','$property_price','$property_description','$property_short_description','$property_latitude','$property_longitude','$facility','$property_address','$builder')
 			";
+			
+			
 			$con->query($query);
 			
 			
@@ -381,7 +451,7 @@ session_start();
 			    $con->query($query);
 			}
 			for($i=0;$i<$total;$i++){
-	    $file_name = time();
+	    $file_name = $property_name.$total;
 		$file_name=$file_name+$i;
 		$source_file = $_FILES['property_image']['tmp_name'][$i];
         $dest_file = "../assets/images/property/";
@@ -401,6 +471,15 @@ session_start();
 		    </script>
 		    ';
 		}
+		
+		$word = array_merge(range('a', 'z'), range('A', 'Z'));
+        shuffle($word);
+        $word1=substr(implode($word), 0, 5);
+        $word2=substr(implode($word), 6, 2);
+        $word3=substr(implode($word), 11, 4);
+        $word4=substr(implode($word), 16, 3);
+        $word5=substr(implode($word), 21, 2);
+        echo "$word1-$word2-$word3-$word4-$word5";
 		?>
 
 	</body>

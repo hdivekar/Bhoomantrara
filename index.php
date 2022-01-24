@@ -43,9 +43,53 @@ include "header.php";
 .arrow-ribbon.bg-secondary:before {
     border-left: 15px solid #fff;
 }
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  background-color: #00578a;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #fff;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+
+}
+
+/*@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}*/
 </style>
 		<!--Sliders Section-->
-		<section>
+		<section id="main">
 			<div class="banner-1 cover-image sptb-2 sptb-tab bg-background2" data-image-src="assets/images/banners/4.jpg">
 				<div class="header-text mb-0">
 					<div class="container">
@@ -57,8 +101,23 @@ include "header.php";
 							<div class="col-xl-10 col-lg-12 col-md-12 d-block mx-auto">
 								<div class="search-background bg-transparent">
 									<div class="form row no-gutters ">
-										<div class="form-group  col-xl-4 col-lg-3 col-md-12 mb-0 bg-white ">
-											<input type="text" class="form-control input-lg br-tr-md-0 br-br-md-0" id="text4" placeholder="Enter Loaction, Landmark">
+										<div class="form-group  col-xl-4 col-lg-3 col-md-12 select2-lg mb-0 bg-white ">
+											<select class="form-control select2-show-search  border-bottom-0" data-placeholder="Property Type">
+												<!--<optgroup label="Categories">-->
+												     <option value="*">All Location</option>
+										<?php
+										 $query_location="SELECT * FROM property_location ORDER BY name ASC";
+                                        $result_location=$GLOBALS['con']->query($query_location);
+                                    	while($row_location=$result_location->fetch_assoc()){
+                                    	      $location_id= $row_location['id'];
+                                    	      $location_name= $row_location['name'];
+                                    	      echo'	<option value="'.$location_id.'">'.$location_name.'</option>';
+                                    	}
+                                      
+										?>		    
+													
+											<!--	</optgroup>-->
+											</select>
 											<span><i class="fa fa-map-marker location-gps mr-1"></i></span>
 										</div>
 										<div class="form-group col-xl-2 col-lg-2 col-md-12 select2-lg  mb-0 bg-white">
@@ -80,10 +139,10 @@ include "header.php";
 											</select>
 										</div>
 										<div class="form-group col-xl-2 col-lg-2 col-md-12 select2-lg  mb-0 bg-white">
-											<select class="form-control select2-show-search  border-bottom-0" data-placeholder="Min Value">
+											<select class="form-control select2-show-search  border-bottom-0" data-placeholder="Min Value" id="min_price" onchange="min_change()">
 											    	<optgroup label="Min Price">
 											   <?php
-										 $query_category="SELECT price FROM property_details GROUP BY price ORDER BY price ASC LIMIT 10";
+										 $query_category="SELECT price FROM property_details GROUP BY price ORDER BY price ASC";
                                         $result_category=$GLOBALS['con']->query($query_category);
                                     	while($row_category=$result_category->fetch_assoc()){
                                     	      $price= $row_category['price'];
@@ -101,7 +160,7 @@ include "header.php";
 											</select>
 										</div>
 										<div class="form-group col-xl-2 col-lg-2 col-md-12 select2-lg  mb-0 bg-white">
-											<select class="form-control select2-show-search  border-bottom-0" data-placeholder="Max Value">
+											<select class="form-control select2-show-search  border-bottom-0" data-placeholder="Max Value" id="max_price">
 												<optgroup label="Max Price">
 											   <?php
 										 $query_category="SELECT price FROM property_details GROUP BY price ORDER BY price DESC LIMIT 10";
@@ -138,69 +197,9 @@ include "header.php";
 		<!--Categories-->
 		<section class="sptb bg-white">
 			<div class="container">
-                <div class="row">
-		    <?php 
-		   
-		    $query="SELECT min(price) AS price,id,builder_id,category,name,area,location,short_description FROM property_details WHERE status='Active' GROUP BY group_property ";
-		    $result=$con->query($query);
-		    if($result->num_rows>0){
-		        while($row=$result->fetch_assoc()){
-		            $property_id=$row['id'];
-		            $builder_id=$row['builder_id'];
-		            $category=$row['category'];
-		            $name=$row['name'];
-		            $price=$row['price'];
-		            $area=$row['area'];
-		            $location=$row['location'];
-		            $short_description=$row['short_description'];
-		            $short_description = (strlen($short_description) > 45) ? substr($short_description, 0, 45) . '...' : $short_description;
-        		    $category=get_category_name($category);
-        		    $location=get_location_name($location);
-        		    $price=convertCurrency($price);
-        		    $property_image=get_first_image($property_id);
-        		    
-		     
-		     echo'
-		        <div class="col-xl-4 col-md-4">
-					<div class="card overflow-hidden">
-						<div class="arrow-ribbon bg-secondary">For Sale</div>
-						<div class="item-card7-imgs">
-					        <a href="property.php?id='.$property_id.'"></a>
-							<img src="assets/images/property/'.$property_image.'" alt="img" class="cover-image image_size">
-						</div>
-						<div class="item-card7-overlaytext">
-							<a href="property.php?id='.$property_id.'" class="text-white"> '.$category.'</a>
-							<h4 class="mb-0">₹ '.$price.'<br><small class="wrapper-small">Negotiable</small></h4>
-						</div>
-						<div class="card-body">
-							<div class="item-card7-desc">
-								<div class="item-card7-text">
-									<a href="property.php?id='.$property_id.'" class="text-dark"><h4 class="font-weight-semibold">'.$name.'</h4></a>
-								</div>
-								<ul class="d-flex mb-3">
-									<li class=""><a href="#" class="icons text-muted"><i class="icon icon-location-pin text-muted mr-1"></i> '.$location.'</a></li>
-									<li><a href="#" class="icons text-muted"><i class="icon icon-event text-muted mr-1"></i>1 min ago</a></li>
-									<li class=""><a href="#" class="icons text-muted"><i class="icon icon-phone text-muted mr-1"></i> 8235712712</a></li>
-								</ul>
-								<p class="mb-0">'.$short_description.'</p>
-							</div>
-						</div>
-						<div class="card-body">
-							<a href="property.php?id='.$property_id.'" class="btn btn-white btn-block">View Details</a>
-						</div>
-					</div>
-				</div>
-		     ';
-		    
-		        }
-		    }
-		    ?>
+                <div class="row" id="property_details">
 		    </div></div>
-		   
-		   
-			
-		   
-	 
+
 			</section>
 		<!--Latest Ads-->
 		 
@@ -234,61 +233,11 @@ include "header.php";
                                         	}
                                             
 										    ?>
-											
-											
-											
 										</ul>
 									</div>
 								</div>
-								<div class="tab-content">
-								    <?php
-										    $query_category="SELECT * FROM property_category";
-                                            $result_category=$GLOBALS['con']->query($query_category);
-                                        	while($row_category=$result_category->fetch_assoc()){
-                                        	    $category_id= $row_category['id'];
-                                        	    $category= $row_category['name'];
-                                        	    
-                                        	    $i=0;
-                                        	    $query="SELECT * FROM property_details WHERE category='$category_id'";
-                                                $result=$con->query($query);
-                                                if($result->num_rows>0){
-                                                    $class="";
-                                                    if($i==0){
-                                        	        $class="";
-                                        	        $i++;
-                                        	    }
-                                                    echo'<div class="tab-pane '.$class.'" id="tab'.$category_id.'"><div class="row">';
-                                                    while($row=$result->fetch_assoc()){
-                                                        $collection_property_id=$row['id'];
-                                                        $collection_name=$row['name'];
-                                                        $collection_short_description=$row['short_description'];
-                                                        $collection_short_description = (strlen($collection_short_description) > 40) ? substr($collection_short_description, 0, 40) . '...' : $collection_short_description;
-                                                        $collection_property_image=get_first_image($collection_property_id);
-                                                 
-                                                 echo'<div class="col-xl-4 col-lg-12 col-md-12 mb-5">
-												<div class="card mb-xl-0">
-													<div class="item-card8-img  br-tr-7 br-tl-7">
-														<img src="assets/images/property/'.$collection_property_image.'" alt="img" class="cover-image" style="min-height:200px;max-height:200px">
-													</div>
-													<div class="card-body">
-														<div class="item-card8-desc">
-															<!--<p class="text-muted">16 November 2019.</p>-->
-															<h4 class="font-weight-semibold">'.$collection_name.'</h4>
-															<p class="mb-0">'.$collection_short_description.'</p>
-														</div>
-													</div>
-												</div>
-											</div>';
-                                                    }
-                                                    echo'</div></div>';
-                                                }
-                                                
-                                        	}
-                                            
-										    ?>
-								    
-								    
-									
+								<div class="tab-content" id="property_collection">
+								 
 								</div>
 							</div>
 						</div>
@@ -389,9 +338,88 @@ include "footer.php";
 include "js.php";
 ?>
 <script>
-    setTimeout(function() { document.getElementById("tab_1").click(); }, 1000);
-</script>
+$(document).ready(function(){
+ setTimeout(function() { 
+     property_details();
+     property_collection();
+ }, 2000);
+});
+
     
-</scrip>
+
+function property_details(){
+    var property_details="property_details";
+    $.ajax({
+		url:"index_backend.php",
+		type:'get',
+		data:{ 	
+		    property_details:property_details,
+		},
+		success: function (data,status){
+		    $('#property_details').html(data);
+		}
+	});
+}
+
+function property_collection(){
+    var property_collection="property_collection";
+    $.ajax({
+		url:"index_backend.php",
+		type:'get',
+		data:{ 	
+		    property_collection:property_collection,
+		},
+		success: function (data,status){
+		    $('#property_collection').html(data);
+		    setTimeout(function() { document.getElementById("tab_1").click(); }, 1000);
+		}
+	});
+}
+
+function min_change(){
+    var min_change="min_change";
+    var min_price=document.getElementById("min_price").value;
+    $.ajax({
+		url:"index_backend.php",
+		type:'get',
+		data:{ 	
+		    min_change:min_change,
+		    min_price:min_price,
+		},
+		success: function (data,status){
+		    $('#max_price').html(data);
+		    
+		}
+	});
+}
+</script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+   document.getElementById("top_bar").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.getElementById("top_bar").style.marginLeft = "";
+}
+document.getElementById("mySidenav").style.display="block";
+document.getElementById("mySidenav_button").style.display="block";
+
+function select_city(sel){
+        var location_id=document.getElementById("location_session").value;
+        var location_name=sel.options[sel.selectedIndex].text;
+        /*localStorage.setItem("location_id",location_id);
+        localStorage.setItem("location_name",location_name);
+        location_name=location_name+" <span style='font-size: 14px;float:right;margin-top:9px'>selected city</span>"
+        document.getElementById("location_session_display").innerHTML=location_name;*/
+        var path="city.php?id="+location_id+"&city="+location_name;
+        window.location.href=path;
+        
+    }
+</script>    
 	</body>
 </html>

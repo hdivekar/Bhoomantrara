@@ -113,9 +113,8 @@ include "header.php";
 				<div class="page-header">
 					<!--h4 class="page-title">RealEstate</h4-->
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Home</a></li>
-						<li class="breadcrumb-item"><a href="#">Categories</a></li>
-						<li class="breadcrumb-item active" aria-current="page">RealEstate</li>
+						<li class="breadcrumb-item"><a href="index.php">Home</a></li> 
+						<li class="breadcrumb-item active" aria-current="page">Property</li>
 					</ol>
 				</div>
 			</div>
@@ -151,7 +150,7 @@ include "header.php";
 </a></h6></div></div>
 								<div class="row">
 									<div class="col-lg-2"><h6><span class="font-weight-semibold"><i class="fa fa-envelope mr-2 mb-2"></i></span></div>
-									<div class="col-lg-10"><a href="mailto:backoffice@burgeonverticles.com" class="text-body">backoffice@burgeonverticles.com</a></h6></div>
+									<div class="col-lg-10"><a href="mailto:support@bhoomantra.com" class="text-body">support@bhoomantra.com</a></h6></div>
 								</div>
 								<div class="row">
 									<div class="col-lg-2"><h6><span class="font-weight-semibold"><i class="fa fa-phone mr-2  mb-2"></i></span></div>
@@ -218,7 +217,7 @@ include "header.php";
 										<table class="table mb-0">
 											<tr>
 												<td><img src="assets/images/property/'.$latest_property_image.'" alt="img" class="w-8 border"/></td>
-												<td class="pl-4"><h5 class="mb-1 ">'.$name.'</h5><a href="property.php?id='.$latest_property_id.'" class="btn-link">View Details</a><span class="float-right font-weight-bold">₹'.$latest_price.'</span></td>
+												<td class="pl-4"><h5 class="mb-1 ">'.$name.'</h5><a href="property.php?id='.$latest_property_id.'" class="btn-link">View Details</a><span class="float-right font-weight-bold">₹'.$latest_price.' <small>onwards</small></span></td>
 											</tr>
 										</table>
 									</li>
@@ -230,7 +229,7 @@ include "header.php";
 							</div>
 						</div>
 						
-						<div class="card">
+						<!--div class="card">
 							<div class="card-header">
 								<h3 class="card-title">Search Ads</h3>
 							</div>
@@ -262,8 +261,8 @@ include "header.php";
 									<a href="#" class="btn  btn-primary">Search</a>
 								</div>
 							</div>
-						</div>
-						<div class="card">
+						</div-->
+						<!--div class="card">
 							<div class="card-header">
 								<h3 class="card-title">Popular Tags</h3>
 							</div>
@@ -284,7 +283,7 @@ include "header.php";
 									</ul>
 								</div>
 							</div>
-						</div>
+						</div-->
 						
 					</div>
 					<!--Right Side Content-->
@@ -312,7 +311,7 @@ include "header.php";
 								</div>
 								<div class="product-slider">
 									<div id="carousel" class="carousel slide" data-ride="carousel">
-										<div class="arrow-ribbon2 bg-primary"><?php echo $price?></div>
+										<div class="arrow-ribbon2 bg-primary">₹ <?php echo $price?> <small>onwards</small></div>
 										<div class="carousel-inner">
 										    <?php 
 										    $query_images="SELECT path FROM property_images WHERE property_id='$property_id'";
@@ -341,7 +340,7 @@ include "header.php";
 											<i class="fa fa-angle-right" aria-hidden="true"></i>
 										</a>
 									</div>
-									<div class="clearfix">
+									<!--<div class="clearfix">
 										<div id="thumbcarousel" class="carousel slide" data-interval="false">
 											<div class="carousel-inner">
 												<div class="carousel-item active">
@@ -366,7 +365,7 @@ include "header.php";
 												<i class="fa fa-angle-right" aria-hidden="true"></i>
 											</a>
 										</div>
-									</div>
+									</div>-->
 								</div>
 							</div>
 						</div>
@@ -467,14 +466,14 @@ include "header.php";
                                 
                                 echo'<div class="item">
 								<div class="card">
-									<div class="arrow-ribbon bg-primary">For Sale</div>
+									<!--div class="arrow-ribbon bg-primary">For Sale</div-->
 									<div class="item-card7-imgs">
 										<a href="property.php?id='.$related_property_id.'"></a>
 										<img src="assets/images/property/'.$related_property_image.'" alt="img" class="cover-image image_size">
 									</div>
 									<div class="item-card7-overlaytext">
 										<a href="property.php?id='.$related_property_id.'" class="text-white">'.$related_category.'</a>
-										<h4 class="mb-0">₹ '.$related_price.'</h4>
+										<h4 class="mb-0">₹ '.$related_price.' <small>onwards</small></h4>
 									</div>
 									<div class="card-body">
 										<div class="item-card7-desc">
@@ -500,7 +499,7 @@ include "header.php";
 						</div>
 						<!--/Related Posts-->
 <!--Comments-->
-						<div class="card" style="display:none">
+						<!--div class="card" style="display:none">
 							<div class="card-header">
 								<h3 class="card-title">Rating And Reviews</h3>
 							</div>
@@ -556,58 +555,16 @@ include "header.php";
 									</div>
 								</div>
 							</div>
-						</div>
+						</div-->
  
 						<!--/Comments--> 
 						 <a href="" class="mr-2 btn btn-default btn-sm" data-toggle="modal" data-target="#report"><span class="">Leave a reply</span></a>
-						 <!--div class="card mb-lg-0">
-							 <div class="card-header"> 
-						 <h3 class="card-title">Leave a reply</h3> 
-							 </div> 
-							<div class="card-body"> 
-								<div> 
-								 <div class="form-group"> 
-									 <input type="text" class="form-control" id="name1" placeholder="Your Name"> 
-									 </div> 
-								<div class="form-group"> 
-									<input type="email" class="form-control" id="email" placeholder="Email Address">
-								</div> 
-								 <div class="form-group"> 
-									 <textarea class="form-control" name="example-textarea-input" rows="6" placeholder="Comment"></textarea> 
-									 </div>
-									 <a href="#" class="btn btn-primary">Send Reply</a> 
-								 </div>
-							</div>
-						 </div -->
+					
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Newsletter-->
-		<section class="sptb bg-white border-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-7 col-xl-6 col-md-12">
-						<div class="sub-newsletter">
-							<h3 class="mb-2"><i class="fa fa-paper-plane-o mr-2"></i> Subscribe To Our Newsletter</h3>
-							<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-						</div>
-					</div>
-					<div class="col-lg-5 col-xl-6 col-md-12">
-						<div class="input-group sub-input mt-1">
-							<input type="text" class="form-control input-lg " placeholder="Enter your Email">
-							<div class="input-group-append ">
-								<button type="button" class="btn btn-primary btn-lg br-tr-3  br-br-3">
-									Subscribe
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--/Newsletter-->
 
 		
 

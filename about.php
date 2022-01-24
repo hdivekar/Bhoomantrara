@@ -1,8 +1,8 @@
 <?php
-//include "include/config.php";
+include "include/config.php";
 ob_start();
 session_start();
-//include "../bhoomantra/include/include.php";
+include "/include/include.php";
 ?>
 <!doctype html>
 <html class="no-js" >
@@ -36,7 +36,7 @@ include "header.php";
 						<div class="text-center text-white ">
 							<h1 class="">About Us</h1>
 							<ol class="breadcrumb text-center">
-								<li class="breadcrumb-item"><a href="#">Home</a></li>
+								<li class="breadcrumb-item"><a href="index.php">Home</a></li>
 								<li class="breadcrumb-item active text-white" aria-current="page">About Us</li>
 							</ol>
 						</div>

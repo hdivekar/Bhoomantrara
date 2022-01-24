@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="templatemo">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="images/favicon.png" rel="icon">
+<title>Bhoomantra</title>
+<!--
+Stimulus Template
+http://www.templatemo.com/tm-498-stimulus
+-->
+<script>
+window.document.onkeydown = function(e) {
+  if (!e) {
+    e = event;
+  }
+  if (e.keyCode == 27) {
+    lightbox_close();
+  }
+}
+
+function lightbox_open() {
+  var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+  window.scrollTo(0, 0);
+  document.getElementById('light').style.display = 'block';
+  document.getElementById('fade').style.display = 'block';
+  lightBoxVideo.play();
+}
+
+function lightbox_close() {
+  var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+  document.getElementById('light').style.display = 'none';
+  document.getElementById('fade').style.display = 'none';
+  lightBoxVideo.pause();
+}
+</script>
+<!-- Javascript files-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-215748791-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-215748791-1');
+</script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/templatemo-style.css">
+
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@700&family=Manrope:wght@700&family=Work+Sans:wght@500;700;900&display=swap" rel="stylesheet">
+
+</head>
+<body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+
+<!-- PRE LOADER -->
+
+<!--<div class="preloader">
+     <div class="spinner">
+          <span class="spinner-rotate"></span>
+     </div>
+</div>-->
+
+
+<!-- Navigation Section -->
+
+<div class="navbar navbar-fixed-top custom-navbar" role="navigation">
+     <div class="container">
+
+          <!-- navbar header -->
+          <div class="navbar-header">
+               <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+               </button>
+               <a href="#" class="navbar-brand"><img src="images/logo3.png"></a>
+          </div>
+
+          <div class="collapse navbar-collapse">
+               <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#home" class="smoothScroll">Home</a></li>
+                    <li><a href="#about" class="smoothScroll">Overview</a></li>
+                    <li><a href="#experience" class="smoothScroll">Highlights</a></li>
+                    <li><a href="#quotes" class="smoothScroll">About Us</a></li>
+                    <li><a href="#contact" class="smoothScroll">Contact</a></li>
+ <li><a href="tel:8235712712" class="wow fadeInUp smoothScroll section-btn btn btn-success pnumber" data-wow-delay="1.4s">   <i class="fa fa-phone fa-1x" aria-hidden="true"></i> &nbsp; 82 35 712 712</a></li>
+               </ul><br>
+
+          </div>
+
+     </div>
+</div>
+
+<!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h2 class="modal-title" id="exampleModalCenterTitle" style="color: #004aad;">Plan Your Visit</h2>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                  </button>
+
+               </div>
+               <div class="modal-body">
+                  <div class="row">
+                     
+                     <div class="col-md-6 col-12">
+                        
+                           <div class="form-group">
+                              <input type="text" class="form-control" name="name2" placeholder="Name" id="name2" >
+                           </div>
+                           <div class="form-group">
+                              <input type="email" class="form-control" name="email2" placeholder="Email" id="email2">
+                           </div>
+                           <div class="form-group">
+                              <input type="number" class="form-control" name="contact2" placeholder="Mobile Number"
+                                 id="contact2">
+                           </div>
+                             
+                           <div class="form-group text-center" id="alert2" style="display:none">
+                            
+                        </div>
+                           <button type="button" class="btn btn-block text-white" style="background-color: #004aad; color:#fff;" onclick="submit_on_click2()" id="submit_button2">Send Enquiry</button>
+                           
+                       
+                     </div>
+                  </div>
+
+               </div>
+          
+            </div>
+         </div>
+      </div>
+ <!-- Modal -->
+<!-- Home Section -->
+
+<section id="home" class="parallax-section">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-6 col-sm-6">
+                    <div class="home-img"></div>
+               </div>
+
+               <div class="col-md-6 col-sm-6">
+                    <div class="home-thumb">
+                         <div class="section-title">
+                                 <h3 class="wow fadeInUp wrapper-pad-top"  data-wow-delay="0.3s">Welcome to Bhoomantra </h3>
+                              <h3 class="wow fadeInUp wrap-color" data-wow-delay="0.6s"> <!--<strong style="color:#004aad">Stimulus</strong> -->A Name You Can Trust</h3>
+                              <p class="wow fadeInUp" data-wow-delay="0.9s">VTP Euphoria Kharadi is one of the integrated townships in Pune which has everything that
+one might look for, right from 1 bhk flat in kharadi, pune to luxury villas in pune. VTP Euphoria
+Kharadi also has 1 bhk flat in pune ready possession, 2 bhk flats in pune ready possession and
+3 bhk flats in pune ready possession. VTP Euphoria Kharadi is a project that is one of the
+tallest residential towers of the area. </p>
+                              
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <!-- <th scope="col"></th> -->
+      <th scope="col"><b style="color:#004aad">Type </b></th>
+      <th scope="col"><b style="color:#004aad">Built-up Area</b> 
+</th>
+      <!-- <th scope="col"><b style="color:#004aad">Price </b> -->
+ <th scope="col"><b style="color:#004aad">Get Quote</b>
+</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <!-- <th scope="row">1</th> -->
+      <td>1 BHK 
+</td>
+      <td>465 sq.ft
+</td>
+      <!-- <td>Rs. 70 - 85 Lacs* All Inclusive</td> -->
+<td><a href="https://api.whatsapp.com/send?phone=918235712712&amp;text=Hello" data-wow-delay="1.4s"><i class="fa fa-whatsapp fa-2x" aria-hidden="true" style="color:#1ea53b;"></i></a></td>
+    </tr>
+	  <tr>
+      <!-- <th scope="row">1</th> -->
+      <td>2 BHK 
+</td>
+      <td>629 - 853 sq.ft
+</td>
+      <!-- <td>Rs. 70 - 85 Lacs* All Inclusive</td> -->
+<td><a href="https://api.whatsapp.com/send?phone=918235712712&amp;text=Hello" data-wow-delay="1.4s"><i class="fa fa-whatsapp fa-2x" aria-hidden="true" style="color:#1ea53b;"></i></a></td>
+    </tr>
+    <tr>
+      <!-- <th scope="row">2</th> -->
+      <td>3 BHK
+</td>
+      <td>1229 - 1233 sq.ft
+</td>
+      <!-- <td>Rs. 1.02 - 1.30 Cr* All Inclusive</td> -->
+<td><a href="https://api.whatsapp.com/send?phone=918235712712&amp;text=Hello" data-wow-delay="1.4s"><i class="fa fa-whatsapp fa-2x" aria-hidden="true" style="color:#1ea53b;"></i></a></td>
+    </tr>
+    
+  </tbody>
+</table>
+                              <a href="tel:8235712712" class="wow fadeInUp smoothScroll section-btn btn btn-success" data-wow-delay="1.4s">   <i class="fa fa-phone fa-1x" aria-hidden="true"></i> &nbsp; 82 35 712 712</a>
+                              
+                         </div>
+                    </div>
+               </div>
+
+
+          </div>
+     </div>
+</section>
+
+
+<!-- About Section -->
+
+<section id="about" class="parallax-section">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-6 col-sm-12">
+                    <div class="about-thumb">
+                         <div class="wow fadeInUp section-title" data-wow-delay="0.4s">
+                              <h1>Overview of VTP Euphoria</h1>
+                              <!-- <p class="color-yellow">Sed vulputate vitae diam quis bibendum</p> -->
+                         </div>
+                         <div class="wow fadeInUp" data-wow-delay="0.8s">
+                              <p>VTP Euphoria Kharadi is one of the best residential properties in kharadi, pune which is a pre-
+launch project. VTP Euphoria Kharadi has premium apartments as well as Premium 1/2/3 BHK
+apartments as well as villas. The flats that are offered by VTP Euphoria make you feel safe, in
+tranquility and is your best place.</p><p> VTP Euphoria Kharadi is surely a place that is worth calling
+the best place to live. This residential cluster is a part of the integrated township in pune of the
+area named Pegasus.</p>
+                              
+                         </div>
+                    </div>
+               </div>
+
+               <div class="col-md-3 col-sm-6">
+                    <div class="background-image about-img"></div>
+               </div>
+
+               <div class="bg-yellow col-md-3 col-sm-6">
+                    <div class="skill-thumb">
+                         <div class="wow fadeInUp section-title color-white" data-wow-delay="1.2s">
+                              <h1>Amenities</h1>
+                              <!-- <p class="color-white">Photoshop . HTML CSS JS . Web Design</p> -->
+                         </div>
+
+                         <div class=" wow fadeInUp skills-thumb" data-wow-delay="1.6s">
+                         <strong> <span style="color:yellow;">&#9733;</span> &nbsp; Multipurpose Sports Court</strong>
+                              <!-- <span class="color-white pull-right">90%</span> -->
+                                   <div class="progress">
+                                        <!-- <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div> -->
+                                   </div>
+
+                         <strong> <span style="color:yellow;">&#9733;</span> &nbsp; Kids Learning Center</strong>
+                              <!-- <span class="color-white pull-right">70%</span> -->
+                                   <div class="progress">
+                                        <!-- <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div> -->
+                                   </div>
+
+                         <strong> <span style="color:yellow;">&#9733;</span>  &nbsp;Clubhouse</strong>
+                              <!-- <span class="color-white pull-right">80%</span> -->
+                                   <div class="progress">
+                                        <!-- <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div> -->
+                                   </div>
+								    <strong> <span style="color:yellow;">&#9733;</span>  &nbsp;Swimming</strong>
+                              <!-- <span class="color-white pull-right">80%</span> -->
+                                   <div class="progress">
+                                        <!-- <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div> -->
+                                   </div>
+                       <strong> <span style="color:yellow;">&#9733;</span> &nbsp; Gym area</strong>
+                              <!-- <span class="color-white pull-right">80%</span> -->
+                                   <div class="progress">
+                                        <!-- <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div> -->
+                                   </div>
+                         </div>
+
+                    </div>
+               </div>
+
+          </div>
+     </div>
+</section>
+
+
+<!-- Service Section -->
+
+<section id="service" class="parallax-section">
+     <div class="container">
+          <div class="row">
+
+               <div class="bg-yellow col-md-3 col-sm-6">
+                    <div class="wow fadeInUp color-white service-thumb" data-wow-delay="0.8s">
+                        <img src="images/Location.png">
+                              <h3>Location </h3>
+                              <p class="color-white">You get to live in a premier location which has easy access to multiple points.</p><span style="visibility:hidden;">easy access to multiple points.easy access to multiple points.</span>
+							  
+                    </div>
+               </div>
+
+               <div class="col-md-3 col-sm-6">
+                    <div class="wow fadeInUp color-white service-thumb" data-wow-delay="1.2s">
+                         <img src="images/Accessibility.png">
+                              <h3>Accessibility</h3>
+                              <p class="color-white">All the 1 bhk, 2 bhk, and 3 bhk flats are well-equipped with a smart home
+automation system with digital locks.</p>
+                    </div>
+               </div>
+
+               <div class="bg-dark col-md-3 col-sm-6">
+                    <div class="wow fadeInUp color-white service-thumb" data-wow-delay="1.6s">
+                          <img src="images/Connectivity.png">
+                              <h3>Connectivity</h3>
+                              <p class="color-white">You get easy connectivity as VTP Euphoria Kharadi smoothly connects to
+all the major IT Parks in Kharadi.</p><br>
+                    </div>
+               </div>
+
+               <div class="bg-white col-md-3 col-sm-6">
+                    <div class="wow fadeInUp service-thumb" data-wow-delay="1.8s">
+                 <img src="images/Exclusive facilities.png">
+                              <h3 style="color:white;">Exclusive facilities</h3>
+                              <p>VTP Euphoria offers you exclusive facilities which includes
+professional sports training academy and fitness centers.</p>
+                    </div>
+               </div>
+
+          </div>
+     </div>
+</section>
+<style>
+@media (min-width: 1666px) and (max-width: 2000px) {
+   #light {
+  display: none;
+    position: absolute;
+    top: -173% !important;
+    left: 100%;
+    max-width: 555px;
+    max-height: 522px;
+    margin-left: -300px;
+    margin-top: 0px;
+    border: 2px solid #FFF;
+    background: #FFF;
+    z-index: 1002;
+    overflow: visible;
+} 
+}
+@media (min-width: 320px) and (max-width: 668px) {
+ #light{
+    display: none;
+    position: absolute;
+    top: -1270% !important;
+    left: 100%;
+    max-width: 100% !important;
+    max-height: 451px !important;
+    margin-left: -360px !important;
+    margin-top: 0px;
+    border: 2px solid #FFF;
+    background: #FFF;
+    z-index: 1002;
+    overflow: visible;
+    }
+}
+#fade {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+  opacity: .80;
+  filter: alpha(opacity=80);
+}
+
+#light {
+  display: none;
+    position: absolute;
+    top: -191%;
+    left: 100%;
+    max-width: 555px;
+    max-height: 522px;
+    margin-left: -300px;
+    margin-top: 0px;
+    border: 2px solid #FFF;
+    background: #FFF;
+    z-index: 1002;
+    overflow: visible;
+}
+
+#boxclose {
+  float: right;
+  cursor: pointer;
+  color: #fff;
+  border: 1px solid #AEAEAE;
+  border-radius: 3px;
+  background: #222222;
+  font-size: 31px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 0px;
+  padding: 11px 3px;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  z-index: 1002;
+  opacity: 0.9;
+}
+
+.boxclose:before {
+  content: "×";
+}
+
+#fade:hover ~ #boxclose {
+  display:none;
+}
+
+.test:hover ~ .test2 {
+  display: none;
+}
+</style>
+
+<!-- Experience Section -->
+
+<section id="experience" class="parallax-section">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-6 col-sm-6" style="padding-right:0px;">
+<div id="light">
+  <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+  <video id="VisaChipCardVideo" width="600" controls>
+      <source src="video/Altair Project intro Video.mp4" type="video/mp4">
+      <!--Browser does not support <video> tag -->
+    </video>
+</div>
+
+<div id="fade" onClick="lightbox_close();"></div>
+
+<div>
+  <a href="#" onclick="lightbox_open();"><img src="images/7.jpg" style="width:100%; "></a>
+</div>
+
+
+                  
+               </div>
+
+               <div class="col-md-6 col-sm-6">
+                    <div class="color-white experience-thumb">
+                         <div class="wow fadeInUp section-title" data-wow-delay="0.8s">
+                              <h1 style="color:#004aad;">Key Highlights</h1>
+                              <!-- <p class="color-white">Previous companies and my tasks</p> -->
+                         </div>
+
+                         <div class="wow fadeInUp color-white media" data-wow-delay="1.2s">
+                              <div class="media-object media-left">
+                                <img src="images/Hospital.png">
+                              </div>
+                              <div class="media-body">
+                                   <h3 class="media-heading">	
+Hospital</h3>
+                                   <p class="color-white">There is easy access to hospitals as Lifeline Hospital is 5 kms away, Columbia
+Asia Hospital is 6 kms away.</p>
+                              </div>
+                         </div>
+
+                         <div class="wow fadeInUp color-white media" data-wow-delay="1.6s">
+                              <div class="media-object media-left">
+                                  <img src="images/school.png">
+                              </div>
+                              <div class="media-body">
+                                   <h3 class="media-heading">School</h3>
+                                   <p class="color-white">No need to hunt for school for your kid as schools are located near the
+apartments as Holy Angels Convent School is next to the project and Podar International
+School is 4.5 kms away.</p>
+                              </div>
+                         </div>
+ <div class="wow fadeInUp color-white media" data-wow-delay="1.6s">
+                              <div class="media-object media-left">
+                                  <img src="images/Shopping Centre (1).png">
+                              </div>
+                              <div class="media-body">
+                                   <h3 class="media-heading">	
+Shopping Centre</h3>
+                                   <p class="color-white">	
+The shopping centres are situated near to the township i.e. Reliance
+Mart is 5.5 kms away and Phoenix Market City is 8 kms away.</p>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+
+          </div>
+     </div>
+</section>
+
+
+<!-- Education Section -->
+
+<section id="education" class="parallax-section">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-6 col-sm-6">
+                    <div class="color-white education-thumb">
+                         <div class="wow fadeInUp section-title" data-wow-delay="0.8s">
+                              <h1 style="color:#004aad;">Highlights of VTP Altair</h1>
+                              <p class="color-white">A World of Thoughtfulness.</p>
+                         </div>
+
+                         <div class="wow fadeInUp color-white media" data-wow-delay="1.2s">
+                              <div class="media-object media-left">
+                                <img src="images/Tallest Apartments in Kharadi.png">
+                              </div>
+                              <div class="media-body">
+                                   <h3 class="media-heading">	
+                                       Tallest Apartments in Kharadi</h3>
+                                   <p class="color-white">	
+
+      Tallest Apartments in Kharadi with 1,2, and 3 BHK flats in Kharadi, Pune which gives you a
+sweeping view of the city and the hills. </p>
+                              </div>
+                         </div>
+
+                         <div class="wow fadeInUp color-white media" data-wow-delay="1.6s">
+                              <div class="media-object media-left">
+                                <img src="images/Luxurious Specifications.png">
+                              </div>
+                              <div class="media-body">
+                                   <h3 class="media-heading">	
+                               Luxurious Specifications</h3>
+                                   <p class="color-white">There are certain luxurious specifications: smart homes automation with digital lock,
+landscaped parks and yoga center to make you feel relaxed.</p>
+                              </div>
+                         </div>
+
+ <div class="wow fadeInUp color-white media" data-wow-delay="1.6s">
+                              <div class="media-object media-left">
+                               <img src="images/Popular Integrated Township (1).png">
+                              </div>
+                              <div class="media-body">
+                                   <h3 class="media-heading">	
+                               	
+            Popular Integrated Township</h3>
+                                   <p class="color-white">The cluster is a part of the highly popular Township Codename Pegasus and will have access to all the central township.</p>
+                              </div>
+                         </div>
+
+                    </div>
+               </div>
+
+               <div class="col-md-6 col-sm-6">
+                    <div class="background-image education-img"></div>
+               </div>
+
+          </div>
+     </div>
+</section>
+
+
+<!-- Quotes Section -->
+
+<section id="quotes" class="parallax-section">
+     <div class="overlay"></div>
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-offset-1 col-md-10 col-sm-12">
+                    <i class="wow fadeInUp fa fa-star" data-wow-delay="0.6s"></i>
+                    <h2 class="wow fadeInUp" data-wow-delay="0.8s">About Bhoomantra</h2>
+                    <p class="wow fadeInUp" data-wow-delay="1s">Bhoomantra is a Realtor that provides premier real estate services to reduce time,cost,and
+efforts. We ensure the best property purchase experience with zero brokerage policy. We have
+many other inventories and we present to you the flats that are upscale, functional, and
+luxurious. We also have the facility of providing loans to our clients.</p>
+               </div>
+
+          </div>
+     </div>
+</section>
+
+
+<!-- Contact Section -->
+
+<section id="contact" class="parallax-section">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-6 col-sm-12">
+                    <div class="contact-form">
+                         <div class="wow fadeInUp section-title" data-wow-delay="0.2s">
+                              <h1 class="color-white">Contact Us</h1>
+                              <p class="color-white">Send your enquiries to ..</p>
+                         </div>
+
+                         <div id="contact-form">
+                             
+                                   <div class="wow fadeInUp" data-wow-delay="1s">
+                                        <input  type="text" class="form-control" name="name1" id="name1" placeholder="Your Name">
+                                   </div>
+                                   <div class="wow fadeInUp" data-wow-delay="1.2s">
+                                        <input  type="email" class="form-control" name="email1" id="email1" placeholder="Your Email">
+                                   </div>
+                                   <div class="wow fadeInUp" data-wow-delay="1.2s">
+                                        <input  type="number" class="form-control" name="contact1" id="contact1" placeholder="Contact Number">
+                                   </div>
+                                   <div class="col-lg-3 text-center" id="alert1" style="display:none">
+                            
+                        </div><br>
+                        <div class="wow fadeInUp col-md-6 col-sm-8" data-wow-delay="1.6s">
+                                        <input name="submit" type="submit" class="form-control" id="submit" value="Send" onclick="submit_on_click1()">
+                                   </div>
+                                   
+                              
+                         </div>
+
+                    </div>
+               </div>
+
+               <div class="col-md-3 col-sm-6">
+                    <div class="background-image contact-img"></div>
+               </div>
+
+               <div class="bg-dark col-md-3 col-sm-6">
+                    <div class="contact-thumb">
+                         <div class="wow fadeInUp contact-info" data-wow-delay="0.6s">
+                              <h3 class="color-white">Head Office</h3>
+                              <p style="color:white;">The Avenue, Unit No.303,
+Airport Road, Marol, Andheri(E)
+Mumbai-400059</p>
+                         </div>
+
+                         <div class="wow fadeInUp contact-info" data-wow-delay="0.8s">
+                              <h3 class="color-white">Contact.</h3>
+                              <p style="color:white;"><i class="fa fa-phone"></i><a href="tel:8235712712" style="color:white;">  + 91 82 35 712 712</a></p>
+                              <p style="color:white;"><i class="fa fa-envelope-o"></i> <a href="mailto: support@bhoomantra.com" style="color:white;"> support@bhoomantra.com </a></p>
+                              <p style="color:white;"><i class="fa fa-globe"></i> <a href="http://www.bhoomantra.com" style="color:white;">www.bhoomantra.com</a></p>
+                         </div>
+
+                    </div>
+               </div>
+
+          </div>
+     </div>
+</section>
+
+
+
+   <div class="fix_footer">
+         <div class="footer">
+            <div class="container desk-footer ">
+ <div class="col-lg-1 whatsapp">
+             
+                   
+                  <a href="https://wa.me/message/W3JAYTWUAFFOP1" target="_blank">
+                     <img src="images/whatsapp-logo-png-70px.png" alt="" height="50">
+                  </a>
+     
+               </div>
+              
+                  <div class="row">
+                     <div class="col-lg-1"></div>
+                     <div class="col-lg-3">
+                        <input type="text" class="mb-2 footer_form" placeholder="Name" name="name3" id="name3">
+                     </div>
+                     <div class="col-lg-3">
+                        <input type="number" class="footer_form mb-2" placeholder="Mobile Number" name="contact3" id="contact3">
+                     </div>
+                     <div class="col-lg-3 text-center" id="alert3" style="display:none">
+                            
+                        </div><br>
+                     <div class="col-lg-3">
+                        <button type="submit" class="btn btn-block mb-2" onclick="submit_on_click3()" id="submit_button3" style="background:#fff;">Submit</button>
+                     </div>
+                     
+                  </div>
+              
+            </div>
+   
+         </div>
+      </div>
+	  
+	  
+       <div class="container-fluid"> 
+		  <div class="mobi-footer">
+		  <div class="row">
+<div class="mb-footer">
+		  <div class="col-xs-12" style="border-right: 1px solid#fff;">
+		  	<div class=" ">
+			<b> <a href="https://wa.me/message/W3JAYTWUAFFOP1" target="_blank">
+			<i class="fa fa-whatsapp" aria-hidden="true"> Whatsapp</i>
+			  </a></b>
+			 
+				</div>
+			 
+				</div> 
+		  	   <div class="col-xs-12"  style="border-right: 1px solid#fff;text-align:center;"> 
+				<div class=" ">
+				<b> 	 <a href="tel:8235712712" target="_blank">
+					 <i class="fa fa-phone"> Call</i>
+					 
+					  </a></b>
+					</div>
+				 
+
+			   </div> 
+		  <div class="col-xs-12">  
+		    <div class=" ">
+				<b>   <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
+                                 <!-- class="card-link location"> -->
+                  <i class="fa fa-envelope" aria-hidden="true"> Enquire</i>
+                  </a></b>
+				</div>
+			 
+		  </div> 
+		  
+	
+		    
+		  </div>
+	  </div> </div>
+	  </div>
+
+     
+
+
+<!-- SCRIPTS -->
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.parallax.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/custom.js"></script>
+
+<script>
+function visit_landing_page(){
+    var visit_landing_page="visit_landing_page";
+    $.ajax({
+		url:"enquiry.php",
+		type:'post',
+		data:{ 	
+		    visit_landing_page:visit_landing_page,
+		},
+		success: function (data,status){
+		}
+	});
+}
+visit_landing_page();
+function submit_on_click1(){
+	var submit_on_click1="submit_on_click1";
+	var name=document.getElementById("name1").value;
+	var email=document.getElementById("email1").value;
+	var mobile=document.getElementById("contact1").value;
+	
+	document.getElementById("alert1").style.display="none";
+    const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+	if(name=="" || email=="" || mobile==""){
+	    document.getElementById("alert1").style.display="block";
+	    var data='<p style="color:red"><b>All Fields are compulsory</b></p>';
+	    $('#alert1').html(data);
+	}
+	else{
+	if(re.test(email)){ 
+	    if(mobile>parseInt(6000000000) && mobile<parseInt(9999999999)){
+	$.ajax({
+		url:"enquiry.php",
+		type:'post',
+		data:{ 	
+		    submit_on_click1:submit_on_click1,
+		    name:name,
+		    email:email,
+		    mobile:mobile,
+		},
+		success: function (data,status){
+		 document.getElementById("alert1").style.display="block";   
+		 var data='<p style="color:green"><b>Thank You!!!<br>We will contact you Soon</b></p>';
+		$('#alert1').html(data);
+			document.getElementById("name1").value="";
+	document.getElementById("email1").value="";
+	document.getElementById("contact1").value="";
+		document.getElementById("submit_button1").style.display="none";
+		thank_you();
+		}
+	});
+	}else{
+	    document.getElementById("alert1").style.display="block";
+	    var data='<p style="color:red"><b>Enter valid Mobile Number</b></p>';
+	    $('#alert1').html(data);
+	}
+	}
+	else{
+	    document.getElementById("alert1").style.display="block";
+	    var data='<p style="color:red"><b>Enter valid Email Id</b></p>';
+	    $('#alert1').html(data);
+	}
+	}
+}
+
+function submit_on_click2(){
+	var submit_on_click1="submit_on_click1";
+	var name=document.getElementById("name2").value;
+	var email=document.getElementById("email2").value;
+	var mobile=document.getElementById("contact2").value;
+	
+	document.getElementById("alert2").style.display="none";
+    const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+	if(name=="" || email=="" || mobile==""){
+	    document.getElementById("alert2").style.display="block";
+	    var data='<p style="color:red"><b>All Fields are compulsory</b></p>';
+	    $('#alert2').html(data);
+	}
+	else{
+	if(re.test(email)){ 
+	    if(mobile>parseInt(6000000000) && mobile<parseInt(9999999999)){
+	$.ajax({
+		url:"enquiry.php",
+		type:'post',
+		data:{ 	
+		    submit_on_click1:submit_on_click1,
+		    name:name,
+		    email:email,
+		    mobile:mobile,
+		},
+		success: function (data,status){
+		 document.getElementById("alert2").style.display="block";   
+		 var data='<p style="color:green"><b>Thank You!!!<br>We will contact you Soon</b></p>';
+		$('#alert2').html(data);
+			document.getElementById("name2").value="";
+	document.getElementById("email2").value="";
+	document.getElementById("contact2").value="";
+		document.getElementById("submit_button2").style.display="none";
+		thank_you();
+		}
+	});
+	}else{
+	    document.getElementById("alert2").style.display="block";
+	    var data='<p style="color:red"><b>Enter valid Mobile Number</b></p>';
+	    $('#alert2').html(data);
+	}
+	}
+	else{
+	    document.getElementById("alert2").style.display="block";
+	    var data='<p style="color:red"><b>Enter valid Email Id</b></p>';
+	    $('#alert2').html(data);
+	}
+	}
+}
+
+function submit_on_click3(){
+	var submit_on_click1="submit_on_click1";
+	var name=document.getElementById("name3").value;
+	var email="";
+	var mobile=document.getElementById("contact3").value;
+	
+	document.getElementById("alert3").style.display="none";
+    const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+	if(name=="" || mobile==""){
+	    document.getElementById("alert3").style.display="block";
+	    var data='<p style="color:red"><b>All Fields are compulsory</b></p>';
+	    $('#alert3').html(data);
+	}
+	else{
+	    if(mobile>parseInt(6000000000) && mobile<parseInt(9999999999)){
+	$.ajax({
+		url:"enquiry.php",
+		type:'post',
+		data:{ 	
+		    submit_on_click1:submit_on_click1,
+		    name:name,
+		    email:email,
+		    mobile:mobile,
+		},
+		success: function (data,status){
+		 document.getElementById("alert3").style.display="block";   
+		 var data='<p style="color:green"><b>Thank You!!!<br>We will contact you Soon</b></p>';
+		$('#alert3').html(data);
+			document.getElementById("name3").value="";
+	document.getElementById("contact3").value="";
+		document.getElementById("submit").style.display="none";
+		thank_you();
+		}
+	});
+	}else{
+	    document.getElementById("alert3").style.display="block";
+	    var data='<p style="color:red"><b>Enter valid Mobile Number</b></p>';
+	    $('#alert3').html(data);
+	}
+	}
+}
+
+
+function thank_you(){
+    var thank_you="thank_you";
+    	$.ajax({
+		url:"thank-you.php",
+		type:'post',
+		data:{ 	
+		    thank_you:thank_you,
+		},
+		success: function (data,status){
+		 document.getElementById("alert3").style.display="block";   
+		}
+    	});
+}
+    
+</script>
+
+</body>
+</html>

@@ -1,4 +1,47 @@
 <?php
+function get_categories($group_property){
+ $query_state="SELECT category FROM property_details WHERE group_property='$group_property' AND category<'5'";
+    $result_state=$GLOBALS['con']->query($query_state);
+    $i=0;
+    $j=0;
+    $where_category="";
+    if($result_state->num_rows>0){
+	while($row_state=$result_state->fetch_assoc()){
+    $category= $row_state['category'];
+    $category=get_category_name($category);
+        $where_category.="$category";
+	}
+	if (strpos($where_category, 'BHK') !== false) {
+    $j=1;
+}
+	$where_category=str_replace(" BHK",",",$where_category);
+	$where_category=rtrim($where_category, ',');
+    if($j==1){
+        $where_category.="BHK";
+    }
+}
+$query_state="SELECT category FROM property_details WHERE group_property='$group_property' AND category>'4'";
+    $result_state=$GLOBALS['con']->query($query_state);
+    if($j==1){
+        $where_category.=",";
+    }
+    if($result_state->num_rows>0){
+	while($row_state=$result_state->fetch_assoc()){
+    $category= $row_state['category'];
+    $category=get_category_name($category);
+        $where_category.="$category";
+	}
+}
+$where_category=rtrim($where_category, ',');
+    return $where_category;
+}
+function get_state($state){
+ $query_state="SELECT * FROM property_state WHERE id='$state'";
+    $result_state=$GLOBALS['con']->query($query_state);
+	$row_state=$result_state->fetch_assoc();
+    $state= $row_state['name'];
+    return $state;
+}
 function get_category_name($category){
  $query_category="SELECT * FROM property_category WHERE id='$category'";
     $result_category=$GLOBALS['con']->query($query_category);

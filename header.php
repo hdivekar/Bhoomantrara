@@ -1,18 +1,50 @@
-		<!--Loader-->
-		<div id="global-loader">
-			<img src="assets/images/loader.svg" class="loader-img" alt="">
-		</div>
-
-		<!--Topbar-->
-	<!--Topbar-->
-		<div class="header-main">
+		<div id="mySidenav" class="sidenav" style="">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="javascript:void(0)" id="location_session_display"></a>
+  
+  <a href="#"><select class="form-control select2-show-search  border-bottom-0" id="location_session" onchange="select_city(this)">
+												<!--<optgroup label="Categories">-->
+			     <option value="*">Select City</option>
+	<?php
+	 $query_location="SELECT * FROM property_location ORDER BY name ASC";
+    $result_location=$GLOBALS['con']->query($query_location);
+	while($row_location=$result_location->fetch_assoc()){
+	      $location_id= $row_location['id'];
+	      $location_name= $row_location['name'];
+	      echo'	<option value="'.$location_id.'">'.$location_name.'</option>';
+	}
+  
+	?>		    
+				
+		<!--	</optgroup>-->
+		</select></a>
+		<a href="#"><select class="form-control select2-show-search  border-bottom-0" id="builder_session" onchange="select_builder(this)">
+			<!--<optgroup label="Categories">-->
+			     <option value="*">Top Builder</option>
+	<?php
+	 $query_builder="SELECT * FROM property_builder ORDER BY name ASC";
+    $result_builder=$GLOBALS['con']->query($query_builder);
+	while($row_builder=$result_builder->fetch_assoc()){
+	      $builder_id= $row_builder['id'];
+	      $builder_name= $row_builder['name'];
+	      echo'	<option value="'.$builder_id.'">'.$builder_name.'</option>';
+	}
+  
+	?>		    
+		</select></a>
+</div>
+	
+		<div class="header-main" id="top_bar">
 			<div class="top-bar">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="row">
 						<div class="col-xl-8 col-lg-8 col-sm-4 col-7">
 							<div class="top-bar-left d-flex">
 								<div class="clearfix">
 									<ul class="socials">
+									    <li>
+											<span id="mySidenav_button" style="cursor:pointer;color:white;" onclick="openNav()">&#9776;</span>
+										</li>
 										<li>
 											<a class="social-icon text-dark"  href="https://www.facebook.com/bhoomantra712"><i class="fa fa-facebook"></i></a>
 										</li>
@@ -30,10 +62,10 @@
 							<div class="top-bar-right">
 								<ul class="custom">
 									<li>
-										<a href="#" class="text-dark"><i class="fa fa-user mr-1"></i> <span>Register</span></a>
+										<a href="register.php" class="text-dark"><i class="fa fa-user mr-1"></i> <span>Register</span></a>
 									</li>
 									<li>
-										<a href="#" class="text-dark"><i class="fa fa-sign-in mr-1"></i> <span>Login</span></a>
+										<a href="login.php" class="text-dark"><i class="fa fa-sign-in mr-1"></i> <span>Login</span></a>
 									</li>
 							
 								</ul>
@@ -48,12 +80,12 @@
 				<div class="container">
 					<a id="horizontal-navtoggle" class="animated-arrow"><span></span></a>
 					<span class="smllogo"><img src="assets/images/brand/logo.png" width="120" alt=""/></span>
-					<a href="tel:245-6325-3256" class="callusbtn"><i class="fa fa-phone" aria-hidden="true"></i></a>
+					<a href="tel:8235712712" class="callusbtn"><i class="fa fa-phone" aria-hidden="true"></i></a>
 				</div>
 			</div>
 			<!-- /Duplex Houses Header -->
 
-			<div class="horizontal-main bg-dark-transparent clearfix">
+			<div class="horizontal-main bg-dark-transparent clearfix" id="">
 				<div class="horizontal-mainwrapper container clearfix">
 					<div class="desktoplogo">
 						<a href="index.php"><img src="assets/images/brand/logo3.png" alt=""></a>
@@ -70,9 +102,7 @@
 							<li aria-haspopup="true"><a href="about.php">About Us </a></li>  
 							
 							<li aria-haspopup="true"><a href="contact.php"> Contact Us <span class="hmarrow"></span></a></li>
-							<li aria-haspopup="true" class="d-lg-none mt-5 pb-5 mt-lg-0">
-								<span><a class="btn btn-secondary" href="ad-posts.html">Post Property Ad</a></span>
-							</li>
+						
 						</ul>
 						<ul class="mb-0" style="display:none;">
 							<li aria-haspopup="true" class="mt-3 d-none d-lg-block top-postbtn">

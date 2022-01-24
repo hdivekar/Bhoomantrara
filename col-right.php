@@ -110,8 +110,8 @@ Andheri (E)
 Mumbai-400059,
 Maharashtra, India.
 </a></h6>
-									<h6><span class="font-weight-semibold"><i class="fa fa-envelope mr-2 mb-2"></i></span><a href="mailto:backoffice@burgeonverticles.com" class="text-body">backoffice@burgeonverticles.com</a></h6>
-									<h6><span class="font-weight-semibold"><i class="fa fa-phone mr-2  mb-2"></i></span><a href="tel:02228230894" class="text-body"> 022-28230894</a></h6>
+									<h6><span class="font-weight-semibold"><i class="fa fa-envelope mr-2 mb-2"></i></span><a href="mailto: support@bhoomantra.com" class="text-body"> support@bhoomantra.com</a></h6>
+									<h6><span class="font-weight-semibold"><i class="fa fa-phone mr-2  mb-2"></i></span><a href="tel:8235712712" class="text-body"> 8235712712</a></h6>
 									 
 								</div>
 							 
@@ -820,7 +820,7 @@ Maharashtra, India.
 		</section>
 
 		<!-- Newsletter-->
-		<section class="sptb bg-white border-top">
+		<!--section class="sptb bg-white border-top">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-7 col-xl-6 col-md-12">
@@ -841,7 +841,7 @@ Maharashtra, India.
 					</div>
 				</div>
 			</div>
-		</section>
+		</section-->
 		<!--/Newsletter-->
 
 		
